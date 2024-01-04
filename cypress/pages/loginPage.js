@@ -6,8 +6,11 @@ class loginPage{
         getPasswordInput: ()=> cy.get("#password").click(),
         getPasswordConfirmationInput: () => cy.get('#password-confirmation').click(),
         getCreateAnAccountButton: () => cy.get('button[type="submit"]').contains('Create an Account'),
+        getSuccessMessage: () => cy.get('.message-success'),
         getErrorMessage :() => cy.contains('This is a required field.'),
         getEmailAlreadyExistMessage: () => cy.contains('There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.'),
+        getValidEmailMessage: () => cy.contains('Please enter a valid email address'),
+        getSamePasswordMessage: () => cy.contains('Please enter the same value again.'),
     }
     typeUserName(name){
         this.elements.getNameInput().type(name);
@@ -50,6 +53,15 @@ class loginPage{
     }
     checkIfEmailAlreadyExistMessageAppears(){
         this.elements.getEmailAlreadyExistMessage().should('exist').should('be.visible');
+    }
+    checkifSuccessMessageAppears(){
+        this.elements.getSuccessMessage().should('contain','Thank you for registering with Main Website Store.');
+    }
+    checkIfValidEmailMessageAppears(){
+        this.elements.getValidEmailMessage().should('be.visible').should('exist');
+    }
+    checkIfSamePasswordMessageAppears(){
+        this.elements.getSamePasswordMessage().should('be.visible').should('exist');
     }
 }
 
