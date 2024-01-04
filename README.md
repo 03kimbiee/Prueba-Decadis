@@ -1,2 +1,4 @@
 # Prueba-Decadis
-antes de iniciar hacer un npm i
+### By: Andrea Kimbie Mendoza Tarqui
+In response to the tasks proposed in the Software tester - Applicant task by Decadis
+**Use *npm i* to install all necessary modules.**
